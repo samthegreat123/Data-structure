@@ -1,0 +1,37 @@
+//Create an array of size 10, input values and print the array, and search an element in the array.
+#include <stdio.h>
+
+int main() {
+    int arr[10], n, search, found = 0;
+
+    printf("Enter the limit: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        printf("Enter %d value: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("\nThe entered values:\n");
+
+    for (int i = 0; i < n; i++) {
+        printf("%d\n", arr[i]);
+    }
+
+    printf("Enter the value to search: ");
+    scanf("%d", &search);
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == search) {
+            printf("Value found at position %d\n", i + 1);
+            found = 1;
+            break;
+        }
+    }
+
+    if (found == 0) {
+        printf("Not found!\n");
+    }
+
+    return 0;
+}
