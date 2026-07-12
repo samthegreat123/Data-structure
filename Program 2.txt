@@ -1,0 +1,27 @@
+//Create an array of size 10, input values and display sums and average of all elements in the array.
+
+#include<stdio.h>
+void main(){
+    int arr[10], sum = 0, i, average = 0,n;
+    
+    printf("Enter the limit of values:");
+    scanf("%d",&n);
+    
+    for(i=0; i<n; i++){
+        printf("Enter the elements:");
+        scanf("%d",&arr[i]);
+    }
+    
+     for(i=0; i<n; i++){
+         printf("%d\n",arr[i]);
+     }
+    
+      for(i=0; i<n; i++){
+       sum = sum + arr[i];
+      }
+      
+      printf("Sum is: %d\n", sum);
+      
+      average = sum/n;
+      printf("The average is:%d", average);
+}
