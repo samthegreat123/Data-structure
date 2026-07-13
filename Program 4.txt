@@ -1,0 +1,49 @@
+
+//Create array A, B of size 3, C of size 6, merge A and B into C.
+
+#include<stdio.h>
+void main(){
+
+int A[3], B[3], C[3];
+
+
+ for(int i=0; i<3; i++){
+     printf("Enter %d value for A:", i + 1);
+     scanf("%d",&A[i]);
+ }
+ printf("\n Values for A\n");
+ for(int i=0; i<3; i++){
+    printf("%d\n",A[i]);
+ }
+
+  for(int i=0; i<3; i++){
+     printf("Enter %d  value for B:", i + 1);
+     scanf("%d",&B[i]);
+ }
+ printf("\n Values for B\n");
+ for(int i=0; i<3; i++){
+    printf("%d\n",B[i]);
+ }
+
+
+printf("\n Now lets Merge this into array C\n");
+
+for(int i=0; i<3; i++){
+    C[i] = A[i];
+}
+
+for(int i=0; i<3; i++){
+    C[i+3] = B[i];
+}
+ printf("Merged array:\n");
+ for(int i=0; i<6; i++){
+    printf("%d",C[i]);
+ }
+
+
+
+
+
+}
+
+
