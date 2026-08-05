@@ -1,0 +1,44 @@
+//4. Write a program to find the factorial of a given integer number using  
+stack. 
+
+#include<stdio.h>
+
+#define SIZE 100
+
+int stack[SIZE];
+int top = -1;
+
+void push(int value)
+{
+    stack[++top] = value;
+}
+
+int pop()
+{
+    return stack[top--];
+}
+
+int main()
+{
+    int num, i;
+    long int fact = 1;
+
+    printf("Enter a number: ");
+    scanf("%d",&num);
+
+    // Push numbers into stack
+    for(i = num; i >= 1; i--)
+    {
+        push(i);
+    }
+
+    // Multiply values after popping
+    while(top != -1)
+    {
+        fact = fact * pop();
+    }
+
+    printf("Factorial of %d is %ld", num, fact);
+
+    return 0;
+}

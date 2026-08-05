@@ -1,0 +1,44 @@
+//3. Write a program to print strings in reverse order using stack.  
+
+#include<stdio.h>
+#include<string.h>
+
+#define SIZE 100
+
+char stack[SIZE];
+int top = -1;
+
+void push(char ch)
+{
+    stack[++top] = ch;
+}
+
+char pop()
+{
+    return stack[top--];
+}
+
+int main()
+{
+    char str[SIZE];
+    int i;
+
+    printf("Enter a string: ");
+    gets(str);
+
+    // Push characters into stack
+    for(i = 0; i < strlen(str); i++)
+    {
+        push(str[i]);
+    }
+
+    printf("Reverse string: ");
+
+    // Pop characters from stack
+    while(top != -1)
+    {
+        printf("%c", pop());
+    }
+
+    return 0;
+}
