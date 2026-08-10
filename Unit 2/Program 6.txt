@@ -1,0 +1,48 @@
+//6. Write a program to find GCD of two numbers. 
+
+#include <stdio.h>
+
+#define MAX 10
+
+int stack[MAX];
+int top = -1;
+
+void push(int value)
+{
+    stack[++top] = value;
+}
+
+int pop()
+{
+    return stack[top--];
+}
+
+int main()
+{
+    int a, b, remainder, gcd;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    // Push both numbers into stack
+    push(a);
+    push(b);
+
+    // Pop numbers from stack
+    b = pop();
+    a = pop();
+
+    // Find GCD
+    while(b != 0)
+    {
+        remainder = a % b;
+        a = b;
+        b = remainder;
+    }
+
+    gcd = a;
+
+    printf("GCD = %d\n", gcd);
+
+    return 0;
+}
