@@ -1,0 +1,77 @@
+#include <stdio.h>
+
+#define MAX 100
+
+int stack[SIZE];
+int top = -1;
+
+void push(int value)
+{
+    stack[++top] = value;
+}
+
+int findMin(int n)
+{
+    int value, min;
+
+    if(n == 1)
+        return stack[top];
+
+    value = stack[top--];
+
+    min = findMin(n - 1);
+
+    if(value < min)
+        min = value;
+
+    top++;
+    stack[top] = value;
+
+    return min;
+}
+
+int findMax(int n)
+{
+    int value, max;
+
+    if(n == 1)
+        return stack[top];
+
+    value = stack[top--];
+
+    max = findMax(n - 1);
+
+    if(value > max)
+        max = value;
+
+    top++;
+    stack[top] = value;
+
+    return max;
+}
+
+int main()
+{
+    int n, i, min, max;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+
+    for(i = 0; i < n; i++)
+    {
+        int value;
+        scanf("%d", &value);
+        push(value);
+    }
+
+    min = findMin(n);
+
+    max = findMax(n);
+
+    printf("Minimum = %d\n", min);
+    printf("Maximum = %d\n", max);
+
+    return 0;
+}
