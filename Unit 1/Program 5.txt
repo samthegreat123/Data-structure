@@ -1,0 +1,21 @@
+/*Create an array size of 10, find the largest value from the array*/
+
+#include<stdio.h>
+void main(){
+    int arr[10], i, largest;
+    
+    for(i=0; i<10; i++){
+        printf("Enter any 10 values:", i + 1);
+        scanf("%d",&arr[i]);
+    }
+    
+    largest = arr[0];
+    
+    for(i=0; i<10; i++){
+        if(arr[i] > largest){
+            largest = arr[i];
+        }
+    }
+    
+    printf("The largest value is %d", largest);
+}
