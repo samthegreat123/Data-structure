@@ -1,3 +1,4 @@
+//1.Implement stact using array with following operations: push, pop, print, peek, peep, change and exit.
 #include <stdio.h>
 
 #define MAX 500
